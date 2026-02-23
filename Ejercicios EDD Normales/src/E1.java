@@ -18,17 +18,11 @@ public class E1 {
 
 
         System.out.println("===== FICHA DEL ESTUDIANTE =====");
-        System.out.println("Estudiante: " + nombre);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Codigo: " + codigo);
+        System.out.println("Semestre: " + semestre);
         System.out.println("Promedio: " + promedio);
-        if (promedio>=3.0) {
-            System.out.println("Estado APROBADO");
-        }
-        else {
-            System.out.println("Estado REPROBADO");
-        }
-
-
-
+        System.out.println("Matriculado: " + matriculado);
 
     }
     
