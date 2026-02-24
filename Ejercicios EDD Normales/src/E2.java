@@ -17,9 +17,9 @@ public class E2 {
         
         precio = 5000;
         cant = 5;
-        descuento = 10;
+        descuento = 0.10;
         subtotal = precio * cant;
-        total = subtotal - (subtotal*descuento/100);
+        total = subtotal - (subtotal*descuento);
 
 
         System.out.println(" ======= RECIBO =======");

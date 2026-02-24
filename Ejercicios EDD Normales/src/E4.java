@@ -34,7 +34,13 @@ public class E4 {
         System.out.println("Cilindraje: "+ cc);
         System.out.println("Precio: "+ precio);
         System.out.println("Inicial del Color: "+ inicial);
-        System.out.println("SOAT: "+ soat);
+        if (soat==true) {
+            System.out.println("El SOAT esta vigente");
+        }
+        else {
+            System.out.println("El SOAT esta vencido");
+        }
+        
 
 
 

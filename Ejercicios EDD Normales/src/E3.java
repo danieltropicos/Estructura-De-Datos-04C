@@ -18,7 +18,7 @@ public class E3 {
         int lectura;
         boolean enalarma;
 
-        celsius = 100;
+        celsius = 20;
         sensor = "Sensor Bueno";
         lectura = 8899;
 
