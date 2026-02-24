@@ -1,4 +1,4 @@
-//Un sistema universitario necesita registrar la información básica de un estudiante: nombre completo,
+//Ejercicio 1 - Un sistema universitario necesita registrar la información básica de un estudiante: nombre completo,
 //  código (número entero), semestre actual, promedio acumulado y si está matriculado o no.
 
 public class E1 {

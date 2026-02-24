@@ -1,4 +1,4 @@
-// Pide al usuario el nombre de un producto,
+// Ejercicio 1 Input - Pide al usuario el nombre de un producto,
 //  la cantidad comprada y el precio unitario.
 //  Calcula el subtotal, aplica un IVA del 19% 
 // y muestra el recibo con el total a pagar.

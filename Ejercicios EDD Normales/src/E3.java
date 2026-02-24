@@ -1,4 +1,5 @@
-// Ejercicio 3 — Sensor de temperatura
+// Ejercicio 3 
+// Sensor de temperatura
 // Un sensor industrial registra temperaturas. El sistema recibe:
 
 // Temperatura actual en Celsius (double)

@@ -1,5 +1,4 @@
-//Una tienda de barrio vende productos al por menor. El cajero necesita calcular:
-
+//Ejercicio 2 - Una tienda de barrio vende productos al por menor. El cajero necesita calcular:
 //Precio unitario de un producto (double)
 //Cantidad comprada (int)
 //Descuento aplicado en porcentaje (double)
