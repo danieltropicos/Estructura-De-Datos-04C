@@ -5,7 +5,7 @@
 // Demuestra con código que cambiar turnoEnPantalla no afecta a 
 // turnoActual (comportamiento por valor).
 // Explica en un comentario por qué ocurre esto.
-public class EJ6 {
+public class E6 {
     public static void main(String[] args) {
 
         int turnoactual;

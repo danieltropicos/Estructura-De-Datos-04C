@@ -6,7 +6,7 @@
 // Simula una venta reduciendo el stock de un producto desde stockReportes.
 // Muestra que stockAlmacen también cambió y explica en comentarios por qué.
 
-public class EJ7 {
+public class E7 {
     public static void main(String[] args) {
         int[] stockalmacen = {20,30,40,50,77};
         int[] stockreportes;
