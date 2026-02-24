@@ -25,7 +25,7 @@ public class E2 {
         System.out.println(" ======= RECIBO =======");
         System.out.println("Precio: " + precio);
         System.out.println("Cantidad: " + cant);
-        System.out.println("Descuento: " + descuento);
+        System.out.println("Descuento: " + descuento*100);
         System.out.println("Subtotal: " + subtotal);
         System.out.println("TOTAL A PAGAR: " + total);
 

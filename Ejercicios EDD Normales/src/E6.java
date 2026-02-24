@@ -27,3 +27,6 @@ public class E6 {
     }
     
 }
+//No se afecta ya que la data si hace una "copia real" de la variable, copia que es totalmente independiente de la otra
+// Son variables completamente diferentes en memoria.
+// cosa que no pasa con los arrays.
