@@ -16,7 +16,7 @@ public class E8 {
 
         System.out.println("Ultimo Mensaje: "+ ultimomensaje);
         System.out.println("Copia de texto: "+ copiatexto);
-        System.out.println("Copia de texto se cambia a Que frase mas vulgar");
+        System.out.println("Como estás?");
 
         copiatexto="Que frase mas vulgar";
 

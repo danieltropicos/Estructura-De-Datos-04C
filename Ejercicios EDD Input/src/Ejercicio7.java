@@ -40,6 +40,7 @@ public class Ejercicio7 {
         for (int y=0;y<4;y++){
             System.out.println("Producto " + (y+1) + ":" + precios[y]);
         }
+        sc.close();
     System.out.println("Ambos cambiaron.");
     }
 }

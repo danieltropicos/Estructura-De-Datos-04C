@@ -27,7 +27,7 @@ public class Ejercicio6 {
         b = sc.nextInt();
         System.out.println("Valor A POST-CAMBIO: " + a);
         System.out.println("Valor B POST-CAMBIO: " + b);
-
+        sc.close();
 
     }
  

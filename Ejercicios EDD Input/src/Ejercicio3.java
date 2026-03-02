@@ -39,7 +39,7 @@ public class Ejercicio3 {
         }
 
 
-
+        sc.close();
 
     }
     

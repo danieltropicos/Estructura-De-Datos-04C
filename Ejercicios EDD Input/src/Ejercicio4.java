@@ -39,6 +39,8 @@ public class Ejercicio4 {
         else {
             System.out.println("No acepto terminos y condiciones");
         }
+        sc.close();
+        
     }
 
 }

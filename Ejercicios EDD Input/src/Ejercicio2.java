@@ -26,7 +26,7 @@ public class Ejercicio2 {
         kelvin=celsius + 273.15;
 
         System.out.println(celsius +" °C " + fh + " °F " + kelvin + " °K ");
-
+        sc.close();
 
     }
  

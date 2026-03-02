@@ -28,5 +28,6 @@ public class RETO{
         else {
             System.out.println("El total es: " + (suma));
         }
+        sc.close();
     }
 }
