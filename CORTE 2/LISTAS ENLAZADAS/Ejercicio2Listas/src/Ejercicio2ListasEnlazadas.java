@@ -4,7 +4,7 @@ public class Ejercicio2ListasEnlazadas {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int opc;
-        ColaProductos ProductoUsar = new ColaProductos();
+        ColaProductos cola = new ColaProductos();
         do{
             System.out.println(" --- MENU --- ");
             System.out.println("1. Ingresar Producto");
@@ -19,27 +19,27 @@ public class Ejercicio2ListasEnlazadas {
                     sc.nextLine();
                     String nombre = sc.nextLine();
                     System.out.print("Ingrese la cantidad del producto: ");
-                    int cantidad = sc.nextInt();
                     sc.nextLine();
+                    int cantidad = sc.nextInt();
                     System.out.print("Ingrese los dias para que este vencido: ");
                     int dias = sc.nextInt();
                     Producto p = new Producto(nombre,cantidad,dias);
                     if(dias<3){
                         System.out.println("ADVERTENCIA: EL PRODUCTO VA A VENCER PRONTO...");
-                        ProductoUsar.agregarPrincipio(p);
+                        cola.agregarPrincipio(p);
                     }
                     else{
-                        ProductoUsar.agregarAlFinal(p);
+                        cola.agregarAlFinal(p);
                     }
 
                     break;
                 case 2:
                     System.out.println("---------------- PRODUCTOS -----------------");
-                    ProductoUsar.mostrarProductos();
+                    cola.mostrarProductos();
                     break;
                 case 3:
                     System.out.println("------- PRODUCTOS QUE VENCEN PRONTO ---------");
-                    ProductoUsar.mostrarProductosVencer();
+                    cola.mostrarProductosVencer();
                     break;
                 case 0:
                     System.out.println("Adios...");

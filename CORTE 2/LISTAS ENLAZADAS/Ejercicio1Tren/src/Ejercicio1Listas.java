@@ -4,7 +4,7 @@ public class Ejercicio1Listas {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int opc;
-        ColaTren tren = new ColaTren();
+        ColaTren cola = new ColaTren();
         do{
             System.out.println(" --- MENU --- ");
             System.out.println("1. Ingresar Vagon");
@@ -27,17 +27,17 @@ public class Ejercicio1Listas {
                     String destino = sc.nextLine();
 
                     Vagon nuevoVagon = new Vagon(contenido, pesoToneladas, origen, destino);
-                    tren.agregarVagon(nuevoVagon);
+                    cola.agregarVagon(nuevoVagon);
 
                     break;
                 case 2:
                     System.out.println("CALCULANDO EL PESO TOTAL...");
-                    double pesoTotal = tren.calcularPesoTotal();
+                    double pesoTotal = cola.calcularPesoTotal();
                     System.out.println("El peso total de los trenes es: " + pesoTotal + "toneladas");
                     break;
                 case 3:
                     System.out.println(" --------- VAGONES ---------");
-                    tren.mostrarVagones();
+                    cola.mostrarVagones();
                     break;
                 case 0:
                     System.out.println("Descarrillando el tren... Adios.");
