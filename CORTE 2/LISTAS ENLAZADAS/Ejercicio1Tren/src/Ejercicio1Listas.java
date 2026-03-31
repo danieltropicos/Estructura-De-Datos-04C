@@ -31,12 +31,16 @@ public class Ejercicio1Listas {
 
                     break;
                 case 2:
+                    System.out.println("CALCULANDO EL PESO TOTAL...");
                     double pesoTotal = tren.calcularPesoTotal();
-                    System.out.println("El peso total de los trenes es: " + pesoTotal);
+                    System.out.println("El peso total de los trenes es: " + pesoTotal + "toneladas");
                     break;
                 case 3:
+                    System.out.println(" --------- VAGONES ---------");
                     tren.mostrarVagones();
                     break;
+                case 0:
+                    System.out.println("Descarrillando el tren... Adios.");
             }
         }while (opc != 0);
     
