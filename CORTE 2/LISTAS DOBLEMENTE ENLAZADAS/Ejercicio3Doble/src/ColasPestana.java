@@ -76,7 +76,9 @@ public class ColasPestana {
         Pestana actual = cabeza;
 
         while (actual != null) {
-            System.out.println(actual.tituloPagina + " - " + actual.url);
+            System.out.println("Título: " + actual.tituloPagina);
+            System.out.println("URL: " + actual.url);
+            System.out.println("Hora: " + actual.horaApertura);
             actual = actual.siguiente;
         }
     }

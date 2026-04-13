@@ -98,8 +98,6 @@ public class ColasCarrusel {
     }
 
     public void mostrarFoto(Carrusel f) {
-        System.out.println("Nombre: " + f.nombreArchivo +
-                " | Tamaño: " + f.tamanoMB + "MB" +
-                " | Resolución: " + f.resolucion);
+        System.out.println("Nombre: " + f.nombreArchivo + " | Tamaño: " + f.tamanoMB + "MB" + " | Resolución: " + f.resolucion);
     }
 }
