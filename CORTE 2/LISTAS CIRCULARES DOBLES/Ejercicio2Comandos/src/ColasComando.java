@@ -40,7 +40,7 @@ public class ColasComando {
     public void MostrarCursor(){
         if (cursor != null)
         {
-            System.out.println(">> " + cabeza.texto + " | " + cabeza.directorio + " | " + (cabeza.exitoso ? "OK" : "ERROR"));
+            System.out.println(">> " + cursor.texto + " | " + cursor.directorio + " | " + (cursor.exitoso ? "OK" : "ERROR"));
         }
     }
     public void eliminarActual() {
