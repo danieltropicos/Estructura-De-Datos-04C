@@ -3,57 +3,62 @@
 public class ColasComando {
     Comando cabeza;
     Comando cola;
+    Comando cursor;
     public ColasComando() {
         this.cabeza = null;
         this.cola = null;
+        this.cursor = null;
     }
-    public void AgregarComando(Comando nuevo){
+    public void AgregarComando(String titulo, boolean exitoso, String directorio) {
+        Comando nueva = new Comando(titulo, exitoso, directorio);
         if (cabeza == null) {
-            nuevo.siguiente = nuevo;
-            nuevo.anterior = nuevo;
-            cabeza = nuevo;
-            cola = nuevo;
+            nueva.siguiente = nueva;
+            nueva.anterior = nueva;
+            cabeza = nueva;
+            cola = nueva;
+            cursor= nueva;
         } else {
-            nuevo.siguiente = cabeza;
-            cabeza.anterior = nuevo;
-            nuevo.anterior = cola;
-            cola.siguiente = nuevo;
-            cabeza = nuevo;
+            cola.siguiente = nueva;
+            nueva.anterior = cola;
+            nueva.siguiente = cabeza;
+            cabeza.anterior = nueva;
+            cola = nueva;
         }
     }
-    public void Arriba(){
-        if(cabeza!=null){
-            cabeza=cabeza.anterior;
-        }
+    public void siguiente() {
+    if (cursor != null) {
+        cursor = cursor.siguiente;
+        System.out.println(cursor.texto);
     }
-    public void Abajo(){
-        if(cabeza!=null){
-            cabeza=cabeza.siguiente;
+    }
+    public void anterior() {
+        if(cursor !=null){
+            cursor=cursor.anterior;
+            System.out.println(cursor.texto);
         }
     }
     public void MostrarCursor(){
-        if (cabeza != null)
+        if (cursor != null)
         {
             System.out.println(">> " + cabeza.texto + " | " + cabeza.directorio + " | " + (cabeza.exitoso ? "OK" : "ERROR"));
         }
     }
-     public void eliminarActual()
-    {
-        if (cabeza == null) return;
+    public void eliminarActual() {
+    if (cursor == null) return;
 
-        // Si solo hay uno
-        if (cabeza.siguiente == cabeza)
-        {
-            cabeza = null;
-            return;
+    if (cursor == cursor.siguiente) {
+        // solo un nodo
+        cabeza = null;
+        cola = null;
+        cursor = null;
+    } else {
+        cursor.anterior.siguiente = cursor.siguiente;
+        cursor.siguiente.anterior = cursor.anterior;
+
+        if (cursor == cabeza) cabeza = cursor.siguiente;
+        if (cursor == cola) cola = cursor.anterior;
+
+        cursor = cursor.siguiente; 
         }
-
-        Comando anterior = cabeza.anterior;
-        Comando siguiente = cabeza.siguiente;
-
-        anterior.siguiente = siguiente;
-        siguiente.anterior = anterior;
-
-        cabeza = siguiente; // pasa al siguiente automáticamente
     }
 }

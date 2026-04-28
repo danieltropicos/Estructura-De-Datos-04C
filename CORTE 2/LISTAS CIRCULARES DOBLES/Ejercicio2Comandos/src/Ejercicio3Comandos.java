@@ -31,16 +31,15 @@ public class Ejercicio3Comandos {
                     System.out.print("Directorio path: ");
                     sc.nextLine();
                     String dir = sc.nextLine();
-                    Comando nueva = new Comando(tx,exi,dir);
-                    cola.AgregarComando(nueva);
+                    cola.AgregarComando(tx, exi, dir);
 
                     System.out.println("Comando recibido exitosamente!");
                     break;
                 case 2:
-                    cola.Arriba();
+                    cola.siguiente();
                     break;
                 case 3:
-                    cola.Abajo();
+                    cola.anterior();
                     break;
                 case 4:
                     cola.MostrarCursor();
@@ -49,21 +48,21 @@ public class Ejercicio3Comandos {
                     cola.eliminarActual();
                     break;
                 case 6:
-                    cola.AgregarComando(new Comando("cd /home", true, "/"));
-                    cola.AgregarComando(new Comando("ls", true, "/home"));
-                    cola.AgregarComando(new Comando("cd documentos", true, "/home"));
-                    cola.AgregarComando(new Comando("mkdir proyecto", true, "/home/documentos"));
-                    cola.AgregarComando(new Comando("cd proyecto", true, "/home/documentos"));
+                    cola.AgregarComando("cd /home", true, "/");
+                    cola.AgregarComando("ls", true, "/home");
+                    cola.AgregarComando("cd documentos", true, "/home");
+                    cola.AgregarComando("mkdir proyecto", true, "/home/documentos");
+                    cola.AgregarComando("cd proyecto", true, "/home/documentos");
 
-                    cola.AgregarComando(new Comando("git init", true, "/home/documentos/proyecto"));
-                    cola.AgregarComando(new Comando("touch main.cs", true, "/home/documentos/proyecto"));
-                    cola.AgregarComando(new Comando("code .", true, "/home/documentos/proyecto"));
+                    cola.AgregarComando("git init", true, "/home/documentos/proyecto");
+                    cola.AgregarComando("touch main.cs", true, "/home/documentos/proyecto");
+                    cola.AgregarComando("code .", true, "/home/documentos/proyecto");
 
-                    cola.AgregarComando(new Comando("cd /var/log", true, "/home/documentos/proyecto"));
-                    cola.AgregarComando(new Comando("ls", true, "/var/log"));
+                    cola.AgregarComando("cd /var/log", true, "/home/documentos/proyecto");
+                    cola.AgregarComando("ls", true, "/var/log");
 
-                    cola.AgregarComando(new Comando("rm error.log", false, "/var/log"));
-                    cola.AgregarComando(new Comando("sudo rm error.log", true, "/var/log"));
+                    cola.AgregarComando("rm error.log", false, "/var/log");
+                    cola.AgregarComando("sudo rm error.log", true, "/var/log");
                     break;
                 case 0:
                     System.out.println("Adios...");

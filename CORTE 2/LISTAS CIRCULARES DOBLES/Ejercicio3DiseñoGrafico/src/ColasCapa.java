@@ -1,73 +1,69 @@
 class ColasCapa {
     Capa cabeza;
     Capa cola;
+    Capa capaActual;
 
     public ColasCapa() {
-        cabeza = null;
-        cola = null;
+        this.cabeza = null;
+        this.cola = null;
+        this.capaActual = null;
     }
 
-    public void agregarCapa(String nombre, boolean visible, String tipo) {
-        Capa nueva = new Capa(nombre, visible, tipo);
-
+    public void agregarCapa(String nombre,boolean visible, String tipo){
+        Capa nueva=new Capa(nombre, visible, tipo);
         if (cabeza == null) {
-            cabeza = nueva;
-            cola = nueva;
             nueva.siguiente = nueva;
             nueva.anterior = nueva;
+            cabeza = nueva;
+            cola = nueva;
+            capaActual= nueva;
         } else {
             cola.siguiente = nueva;
             nueva.anterior = cola;
-
             nueva.siguiente = cabeza;
             cabeza.anterior = nueva;
-
             cola = nueva;
         }
     }
 
     // subir = siguiente
     public void subirCapa() {
-        if (cabeza != null) {
-            cabeza = cabeza.siguiente;
-        }
+    if (capaActual != null) {
+        capaActual = capaActual.siguiente;
+        System.out.println(capaActual.nombre);
     }
-
-    // bajar = anterior
+    }
     public void bajarCapa() {
-        if (cabeza != null) {
-            cabeza = cabeza.anterior;
+        if(capaActual !=null){
+            capaActual=capaActual.anterior;
+            System.out.println(capaActual.nombre);
         }
     }
 
     public void toggleVisibilidad() {
-        if (cabeza != null) {
-            cabeza.visible = !cabeza.visible;
+    if (capaActual != null) {
+        capaActual.visible = !capaActual.visible;
         }
     }
 
     public void eliminarActiva() {
-        if (cabeza == null) return;
+    if (capaActual == null) return;
 
-        // solo una
-        if (cabeza.siguiente == cabeza) {
-            cabeza = null;
-            cola = null;
-            return;
+    if (capaActual == capaActual.siguiente) {
+        // solo un nodo
+        cabeza = null;
+        cola = null;
+        capaActual = null;
+    } else {
+        capaActual.anterior.siguiente = capaActual.siguiente;
+        capaActual.siguiente.anterior = capaActual.anterior;
+
+        if (capaActual == cabeza) cabeza = capaActual.siguiente;
+        if (capaActual == cola) cola = capaActual.anterior;
+
+        capaActual = capaActual.siguiente; 
+        System.out.println(capaActual + "ELIMINADA" );
         }
-
-        Capa anterior = cabeza.anterior;
-        Capa siguiente = cabeza.siguiente;
-
-        anterior.siguiente = siguiente;
-        siguiente.anterior = anterior;
-
-        // actualizar
-        if (cabeza == cola) {
-            cola = anterior;
-        }
-
-        cabeza = siguiente;
     }
 
     public void mostrarCapas() {
@@ -76,28 +72,37 @@ class ColasCapa {
             return;
         }
 
-        Capa temp = cabeza;
+        Capa actual = cabeza;
 
         do {
-            String marca = (temp == cabeza) ? "[X]" : "[ ]";
-            String vis = temp.visible ? "VISIBLE" : "OCULTA";
+            if (actual == capaActual) {
+                System.out.print("[✓] ");
+            } else {
+                System.out.print("[ ] ");
+            }
 
-            System.out.println(marca + " " + temp.nombre + 
-                            " (" + temp.tipo + ") - " + vis);
+            if (actual.visible) {
+                System.out.print("visible - ");
+            } else {
+                System.out.print("oculto - ");
+            }
 
-            temp = temp.siguiente;
+            System.out.println(actual.nombre + " - " + actual.tipo);
 
-        } while (temp != cabeza);
+            actual = actual.siguiente;
+
+        } while (actual != cabeza); 
     }
+
     public void mostrarCapaActual() {
-        if (cabeza == null) {
-            System.out.println("No hay capas");
-            return;
-        }
+    if (capaActual == null) {
+        System.out.println("No hay capas");
+        return;
+    }
 
-        String vis = cabeza.visible ? "VISIBLE" : "OCULTA";
+    String vis = capaActual.visible ? "VISIBLE" : "OCULTA";
 
-        System.out.println("[ACTUAL] " + cabeza.nombre + 
-                        " (" + cabeza.tipo + ") - " + vis);
+    System.out.println("[ACTUAL] " + capaActual.nombre + 
+                    " (" + capaActual.tipo + ") - " + vis);
     }
 }
