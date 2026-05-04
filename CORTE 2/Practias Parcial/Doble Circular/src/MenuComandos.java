@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Ejercicio2Comandos {
+public class MenuComandos {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int opc;
-        ColasComando cola = new ColasComando();
+        ColaComando cola = new ColaComando();
 
         
 
@@ -17,6 +17,7 @@ public class Ejercicio2Comandos {
             System.out.println("4. Mostrar Cursor");
             System.out.println("5. Eliminar Actual");
             System.out.println("6. Comandos por defecto");
+            System.out.println("7 mostrar todos");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opc = sc.nextInt();
@@ -36,16 +37,18 @@ public class Ejercicio2Comandos {
                     System.out.println("Comando recibido exitosamente!");
                     break;
                 case 2:
-                    cola.siguiente();
+                    cola.arriba();
+                    cola.mostrarCursores();
                     break;
                 case 3:
-                    cola.anterior();
+                    cola.abajo();
+                    cola.mostrarCursores();
                     break;
                 case 4:
                     cola.MostrarCursor();
                     break;
                 case 5:
-                    cola.eliminarActual();
+                    cola.EliminarCursor();
                     break;
                 case 6:
                     cola.AgregarComando("cd /home", true, "/");
@@ -63,6 +66,9 @@ public class Ejercicio2Comandos {
 
                     cola.AgregarComando("rm error.log", false, "/var/log");
                     cola.AgregarComando("sudo rm error.log", true, "/var/log");
+                    break;
+                case 7:
+                    cola.mostrarCursores();
                     break;
                 case 0:
                     System.out.println("Adios...");

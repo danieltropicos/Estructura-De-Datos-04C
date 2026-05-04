@@ -37,7 +37,7 @@ public class ColasFoto {
             actual.esFavorita = !actual.esFavorita;
         }
     }
-        public void eliminarActual() {
+    public void eliminarActual() {
 
         if (actual == null) return;
 
