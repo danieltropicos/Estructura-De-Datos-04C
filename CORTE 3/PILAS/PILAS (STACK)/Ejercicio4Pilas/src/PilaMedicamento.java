@@ -3,7 +3,6 @@ public class PilaMedicamento {
     private Medicamento tope;
     private int tamanio;
 
-    // PUSH
     public void push(Medicamento nuevo) {
 
         nuevo.siguiente = tope;
@@ -13,8 +12,6 @@ public class PilaMedicamento {
     public int getTamanio() {
         return tamanio;
     }
-
-    // POP
     public Medicamento pop() {
 
         if (tope == null) {
@@ -29,8 +26,6 @@ public class PilaMedicamento {
 
         return aux;
     }
-
-    // IMPRIMIR
     public void imprimir() {
 
         if (tope == null) {
@@ -49,7 +44,6 @@ public class PilaMedicamento {
         }
     }
 
-    // RETO
     public void validarDespacho() {
 
         while (tope != null && tope.diasParaVencer < 10) {

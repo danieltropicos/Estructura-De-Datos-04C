@@ -49,31 +49,30 @@ public class PilaEstacion {
 
     public void retrocederASuperficie() {
 
-        if (tope == null) {
+    if (tope == null) {
 
-            System.out.println("No hay estaciones para retroceder.");
+        System.out.println("No hay estaciones para retroceder.");
 
-            return;
-        }
-
-        System.out.println("DE VUELTA A LA SUPERFICIE...\n");
-
-        Estacion actual = tope;
-        while (tope != null) {
-
-            System.out.println("Retrocediendo por:");
-            System.out.println(actual.nombrePunto);
-            actual = actual.siguiente;
-
-            // ALERTA
-            if (actual.nivelOxigeno < 18) {
-
-                System.out.println("⚠ Uso de Tanque de Emergencia Requerido");
-            }
-
-            System.out.println();
-        }
-
-        System.out.println("El equipo ha salido de la cueva, esperemos que vivos.");
+        return;
     }
+
+    System.out.println("DE VUELTA A LA SUPERFICIE...\n");
+
+    Estacion actual = tope;
+
+    while (actual != null) {
+
+        System.out.println("Retrocediendo por:");
+        System.out.println(actual.nombrePunto);
+
+        if (actual.nivelOxigeno < 18) {
+
+            System.out.println("PELIGRO: Uso de Tanque de Emergencia Requerido");
+        }
+
+        actual = actual.siguiente;
+    }
+
+    System.out.println("El equipo ha salido de la cueva, esperemos que vivos.");
+}
 }
